@@ -56,7 +56,9 @@ class IntegrationTests():
                 print("Dual", self.ghs.lamps.dual.get_status())
                 sleep(LAMP_OFF_DELAY)
         except KeyboardInterrupt:
-            pass
+            self.ghs.lamps.dual.off()
+            self.ghs.lamps.red.off() 
+            self.ghs.lamps.white.off() 
         print("Lamp test done.")
         print()
 
@@ -100,7 +102,7 @@ class IntegrationTests():
                 print("Fan", self.ghs.fan.get_status())
                 sleep(5)
         except KeyboardInterrupt:
-            pass
+            self.ghs.fan.off()
         print("Fan test done.")
         print()
 
@@ -118,7 +120,7 @@ class IntegrationTests():
                 print("Buzzer", self.ghs.buzzer.get_status())
                 sleep(1)
         except KeyboardInterrupt:
-            pass
+            self.ghs.buzzer.off()
         print("Buzzer test done.")
         print()
 
@@ -147,7 +149,8 @@ class IntegrationTests():
                 print("Servo", self.ghs.servo.get_status())
                 sleep(1)
         except KeyboardInterrupt:
-            pass
+            pos = 0
+            self.ghs.servo.move(pos)
         print("Servo test done.")
         print()
 
