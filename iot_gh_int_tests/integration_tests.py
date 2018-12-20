@@ -127,7 +127,6 @@ class IntegrationTests():
     def test_servo(self):
         print()
         print("Testing servo.")
-        print("Servo position set in ~/iot_gh/iot_gh_system.conf.")
         print("Use Ctrl+C to end test.")
         try:
             while True:
